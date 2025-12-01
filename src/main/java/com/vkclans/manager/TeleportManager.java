@@ -31,6 +31,12 @@ public class TeleportManager {
     public void teleportWithDelay(Player player, Location destination, int delay, boolean cancelOnMove) {
         UUID uuid = player.getUniqueId();
         
+        // Verifica se o destino é válido
+        if (destination == null || destination.getWorld() == null) {
+            MessageUtil.send(player, "clan-base-invalid");
+            return;
+        }
+        
         // Cancela teleporte pendente se houver
         cancelTeleport(uuid);
         
@@ -116,6 +122,14 @@ public class TeleportManager {
                 MessageUtil.send(player, "clan-base-teleporting", ph);
                 remainingSeconds--;
             } else {
+                // Verifica se o destino ainda é válido
+                if (destination == null || destination.getWorld() == null) {
+                    MessageUtil.send(player, "clan-base-invalid");
+                    pendingTeleports.remove(player.getUniqueId());
+                    cancel();
+                    return;
+                }
+                
                 // Teleporta
                 player.teleport(destination);
                 MessageUtil.send(player, "clan-base-tp");
