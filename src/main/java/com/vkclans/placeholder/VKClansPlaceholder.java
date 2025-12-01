@@ -12,8 +12,9 @@ import java.util.UUID;
  * 
  * Placeholders disponíveis:
  * %vkclans_clan% - Nome do clã
- * %vkclans_tag% - Tag do clã
- * %vkclans_tag_colored% - Tag colorida do clã
+ * %vkclans_tag% - Tag colorida do clã (com cores)
+ * %vkclans_tag_raw% - Tag sem cores
+ * %vkclans_tag_colored% - Tag colorida do clã (alias)
  * %vkclans_role% - Cargo no clã
  * %vkclans_role_colored% - Cargo colorido
  * %vkclans_kills% - Kills do clã
@@ -50,6 +51,11 @@ public class VKClansPlaceholder {
                 return clan != null ? clan.getName() : "";
                 
             case "tag":
+                // Retorna a tag colorida por padrão
+                return clan != null ? clan.getColoredTag() : "";
+                
+            case "tag_raw":
+                // Retorna a tag sem cores
                 return clan != null ? clan.getTag() : "";
                 
             case "tag_colored":
