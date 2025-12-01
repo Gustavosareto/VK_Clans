@@ -1,0 +1,91 @@
+name: VKClans
+main: com.vkclans.VKClans
+version: 1.0.9
+author: VKClans
+description: Plugin de Clans Avançado para Minecraft 1.8.8 com sistemas completos
+softdepend: [Vault]
+
+commands:
+  clan:
+    description: Comando principal do sistema de clãs
+    usage: /clan <subcomando>
+    aliases: [c]
+    permission: vkclans.use
+  
+  clans:
+    description: Abre o menu de clãs
+    usage: /clans
+    permission: vkclans.use
+
+permissions:
+  # ═══════════════════════════════════════
+  # Permissões Básicas
+  # ═══════════════════════════════════════
+  vkclans.use:
+    description: Permite usar comandos básicos do VKClans
+    default: true
+  
+  vkclans.criar:
+    description: Permite criar um clã
+    default: true
+  
+  vkclans.convidar:
+    description: Permite convidar jogadores para o clã
+    default: true
+  
+  vkclans.expulsar:
+    description: Permite expulsar jogadores do clã
+    default: true
+  
+  vkclans.setbase:
+    description: Permite definir a base do clã
+    default: true
+  
+  vkclans.base:
+    description: Permite teleportar para a base do clã
+    default: true
+  
+  # ═══════════════════════════════════════
+  # Permissões de Guerra
+  # ═══════════════════════════════════════
+  vkclans.guerra:
+    description: Permite declarar guerra contra outros clãs
+    default: true
+  
+  # ═══════════════════════════════════════
+  # Permissões de Administração
+  # ═══════════════════════════════════════
+  vkclans.admin:
+    description: Permite administrar clãs (bypass de restrições)
+    default: op
+  
+  vkclans.reload:
+    description: Permite recarregar o plugin
+    default: op
+  
+  vkclans.spy:
+    description: Permite espionar o chat de todos os clãs
+    default: op
+  
+  vkclans.deletar.outros:
+    description: Permite deletar qualquer clã
+    default: op
+  
+  # ═══════════════════════════════════════
+  # Pacote de Permissões
+  # ═══════════════════════════════════════
+  vkclans.*:
+    description: Todas as permissões do VKClans
+    default: op
+    children:
+      vkclans.use: true
+      vkclans.criar: true
+      vkclans.convidar: true
+      vkclans.expulsar: true
+      vkclans.setbase: true
+      vkclans.base: true
+      vkclans.guerra: true
+      vkclans.admin: true
+      vkclans.reload: true
+      vkclans.spy: true
+      vkclans.deletar.outros: true
