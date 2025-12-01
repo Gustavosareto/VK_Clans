@@ -4,7 +4,9 @@ import com.vkclans.command.ClanCommand;
 import com.vkclans.command.OpenClanMenuCommand;
 import com.vkclans.listener.*;
 import com.vkclans.manager.*;
+import com.vkclans.placeholder.VKClansExpansion;
 import com.vkclans.util.MessageUtil;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -54,12 +56,19 @@ public class VKClans extends JavaPlugin {
         getCommand("clan").setTabCompleter(clanCommand);
         getCommand("clans").setExecutor(new OpenClanMenuCommand());
         
+        // Registra PlaceholderAPI se disponível
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new VKClansExpansion(this).register();
+            getLogger().info("PlaceholderAPI integrado com sucesso!");
+        }
+        
         getLogger().info("========================================");
-        getLogger().info("  VKClans v1.0.9 habilitado!");
+        getLogger().info("  VKClans v1.1.0 habilitado!");
         getLogger().info("  Sistemas: Guerra, Ranking, Banco,");
         getLogger().info("            Nivel, Bau, Chat, Missoes");
         getLogger().info("            Aliancas, Conquistas, Semanal");
         getLogger().info("            Limite IP, Friendly Fire");
+        getLogger().info("            PlaceholderAPI Integrado");
         getLogger().info("========================================");
     }
 
