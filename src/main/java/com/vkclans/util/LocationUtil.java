@@ -12,6 +12,9 @@ import java.util.Map;
  */
 public class LocationUtil {
     public static Map<String, Object> serialize(Location loc) {
+        if (loc == null || loc.getWorld() == null) {
+            return null;
+        }
         Map<String, Object> map = new HashMap<>();
         map.put("world", loc.getWorld().getName());
         map.put("x", loc.getX());

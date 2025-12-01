@@ -288,8 +288,13 @@ public class Clan {
         for (UUID uuid : invites) inviteList.add(uuid.toString());
         map.put("invites", inviteList);
         
-        // Base
-        if (base != null) map.put("base", LocationUtil.serialize(base));
+        // Base - só salva se não for null
+        if (base != null) {
+            Map<String, Object> baseData = LocationUtil.serialize(base);
+            if (baseData != null) {
+                map.put("base", baseData);
+            }
+        }
         
         return map;
     }
