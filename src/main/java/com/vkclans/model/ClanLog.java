@@ -80,17 +80,24 @@ public class ClanLog {
     public Map<String, Object> serialize() {
         Map<String, Object> map = new HashMap<>();
         map.put("timestamp", timestamp);
-        map.put("player", player.toString());
-        map.put("playerName", playerName);
+        map.put("player", player != null ? player.toString() : "SYSTEM");
+        map.put("playerName", playerName != null ? playerName : "Sistema");
         map.put("type", type.name());
-        map.put("details", details);
+        map.put("details", details != null ? details : "");
         return map;
     }
 
     public static ClanLog deserialize(Map<String, Object> map) {
+        String playerStr = (String) map.get("player");
+        UUID playerUUID = null;
+        if (playerStr != null && !playerStr.equals("SYSTEM")) {
+            try {
+                playerUUID = UUID.fromString(playerStr);
+            } catch (IllegalArgumentException ignored) {}
+        }
         return new ClanLog(
             ((Number) map.get("timestamp")).longValue(),
-            UUID.fromString((String) map.get("player")),
+            playerUUID,
             (String) map.get("playerName"),
             LogType.valueOf((String) map.get("type")),
             (String) map.get("details")
