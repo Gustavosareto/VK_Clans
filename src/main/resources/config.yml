@@ -1,0 +1,323 @@
+# ═══════════════════════════════════════════════════════════════
+#                    VKClans - CONFIGURAÇÕES
+#           Plugin de Clans Avançado para Minecraft 1.8.8
+# ═══════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════
+#                      CONFIGURAÇÕES GERAIS
+# ═══════════════════════════════════════════════════════════════
+geral:
+  # Tamanho mínimo e máximo do nome do clã
+  nome-min: 3
+  nome-max: 16
+  
+  # Tamanho mínimo e máximo da tag do clã
+  tag-min: 2
+  tag-max: 4
+  
+  # Permitir cores no nome do clã (&c, &a, etc)
+  permitir-cores-nome: false
+  
+  # Limite de membros por clã (base, sem bônus de nível)
+  max-membros: 50
+
+# ═══════════════════════════════════════════════════════════════
+#                      BLACKLIST DE NOMES E TAGS
+# ═══════════════════════════════════════════════════════════════
+blacklist:
+  # Nomes de clã proibidos (case insensitive)
+  nomes:
+    - "admin"
+    - "staff"
+    - "moderador"
+    - "mod"
+    - "dono"
+    - "owner"
+    - "server"
+    - "servidor"
+    - "console"
+    - "system"
+    - "null"
+    - "undefined"
+  
+  # Tags proibidas (case insensitive)
+  tags:
+    - "ADM"
+    - "MOD"
+    - "VIP"
+    - "MVP"
+    - "DONO"
+    - "STAFF"
+    - "GM"
+    - "OP"
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE CONVITES
+# ═══════════════════════════════════════════════════════════════
+convites:
+  # Tempo em segundos até o convite expirar
+  expiracao: 60
+  
+  # Máximo de convites pendentes por jogador
+  max-pendentes: 5
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE BASE
+# ═══════════════════════════════════════════════════════════════
+base:
+  # Cooldown em segundos entre teleportes
+  cooldown: 30
+  
+  # Tempo de espera em segundos antes de teleportar
+  tempo-espera: 3
+  
+  # Cancelar teleporte se o jogador se mover (false = pode se mover durante teleporte)
+  cancelar-ao-mover: false
+  
+  # Bloquear teleporte enquanto em combate
+  bloquear-em-combate: true
+  
+  # Tempo em segundos para tag de combate expirar
+  tempo-combate: 10
+  
+  # Mundos onde a base pode ser definida (deixe vazio para permitir todos)
+  # Se a lista estiver vazia, qualquer mundo sera permitido
+  mundos-permitidos:
+    - "world"
+    - "plotworld"
+  
+  # Mundos onde a base NAO pode ser definida
+  mundos-bloqueados:
+    - "world_nether"
+    - "world_the_end"
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE PONTOS
+# ═══════════════════════════════════════════════════════════════
+pontos:
+  # Pontos ganhos por matar um jogador
+  pontos-por-kill: 10
+  
+  # Pontos perdidos ao morrer
+  pontos-por-morte: 5
+  
+  # Bônus extra ao matar membro de outro clã
+  bonus-clan-rival: 5
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE GUERRA
+# ═══════════════════════════════════════════════════════════════
+guerra:
+  # Duração da guerra em minutos
+  duracao: 30
+  
+  # Cooldown em minutos entre guerras
+  cooldown: 60
+  
+  # Recompensa em pontos para o vencedor
+  recompensa-pontos: 100
+  
+  # Experiência ganha pelo vencedor
+  recompensa-exp: 50
+  
+  # Dinheiro ganho pelo vencedor (requer Vault)
+  recompensa-dinheiro: 1000
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE NÍVEL
+# ═══════════════════════════════════════════════════════════════
+nivel:
+  # Nível máximo do clã
+  maximo: 10
+  
+  # Experiência base necessária para nível 2
+  exp-base: 100
+  
+  # Multiplicador de exp por nível (exp = base * multiplier^(nivel-1))
+  exp-multiplier: 1.5
+  
+  # Membros extras permitidos por nível
+  bonus-membros-por-nivel: 5
+  
+  # Número de homes base
+  homes-base: 1
+  
+  # Homes extras por nível
+  bonus-homes-por-nivel: 1
+  
+  # Redução do cooldown de teleporte por nível (segundos)
+  reducao-cooldown-por-nivel: 2
+  
+  # Custo base para comprar upgrade de nível
+  custo-upgrade-base: 5000
+  
+  # Multiplicador do custo por nível
+  custo-upgrade-multiplier: 2.0
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE BANCO
+# ═══════════════════════════════════════════════════════════════
+banco:
+  # Valor mínimo para depósito
+  deposito-minimo: 100
+  
+  # Valor mínimo para saque
+  saque-minimo: 100
+  
+  # Taxa de saque (0 = sem taxa, 0.1 = 10%)
+  taxa-saque: 0
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE MISSÕES
+# ═══════════════════════════════════════════════════════════════
+missoes:
+  # Duração das missões em horas
+  duracao-horas: 24
+  
+  # Número máximo de missões ativas por clã
+  max-ativas: 3
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE CHAT
+# ═══════════════════════════════════════════════════════════════
+chat:
+  # Formato do chat do clã
+  # Placeholders: {tag}, {clan}, {role}, {player}, {message}
+  format: "§7[§6{tag}§7] §e{role} §f{player}§7: §f{message}"
+  
+  # Mostrar prefixo do clã no chat global
+  prefix-enabled: true
+
+# ═══════════════════════════════════════════════════════════════
+#                      CONFIGURAÇÃO DO MENU
+# ═══════════════════════════════════════════════════════════════
+menu:
+  # Som ao abrir menu (CLICK, NOTE_PLING, etc)
+  som-abrir: "CLICK"
+  
+  # Som ao clicar em item
+  som-clicar: "CLICK"
+  
+  # Membros por página no menu de membros
+  membros-por-pagina: 21
+
+# ═══════════════════════════════════════════════════════════════
+#                      SISTEMA DE ALIANÇAS
+# ═══════════════════════════════════════════════════════════════
+aliancas:
+  # Ativado?
+  ativado: true
+  
+  # Máximo de aliados por clã
+  max-aliados: 3
+  
+  # Tempo em segundos para aceitar convite de aliança
+  tempo-convite: 60
+  
+  # Friendly fire entre aliados (false = nao podem se machucar)
+  friendly-fire-aliados: false
+
+# ═══════════════════════════════════════════════════════════════
+#                      LIMITE DE IP (Anti Multi-Conta)
+# ═══════════════════════════════════════════════════════════════
+ip-limit:
+  # Ativar sistema de limite por IP
+  ativado: true
+  
+  # Máximo de clãs diferentes por IP
+  max-clas-por-ip: 2
+
+# ═══════════════════════════════════════════════════════════════
+#                      RANKING SEMANAL
+# ═══════════════════════════════════════════════════════════════
+ranking-semanal:
+  # Ativado?
+  ativado: true
+  
+  # Recompensas para top 3 (pontos)
+  recompensas-pontos:
+    primeiro: 500
+    segundo: 300
+    terceiro: 150
+  
+  # Recompensas para top 3 (dinheiro)
+  recompensas-dinheiro:
+    primeiro: 5000
+    segundo: 3000
+    terceiro: 1500
+
+# ═══════════════════════════════════════════════════════════════
+#                      CONQUISTAS
+# ═══════════════════════════════════════════════════════════════
+conquistas:
+  # Ativado?
+  ativado: true
+  
+  # Verificar conquistas a cada X segundos
+  intervalo-verificacao: 300
+
+# ═══════════════════════════════════════════════════════════════
+#                      FRIENDLY FIRE
+# ═══════════════════════════════════════════════════════════════
+friendly-fire:
+  # Permitir que membros do mesmo clã se machuquem?
+  permitido: false
+  
+  # Permitir durante guerras?
+  permitido-em-guerra: false
+
+# ═══════════════════════════════════════════════════════════════
+#                      LOGGING
+# ═══════════════════════════════════════════════════════════════
+logging:
+  level: INFO  # DEBUG, INFO, WARN, ERROR
+
+# ═══════════════════════════════════════════════════════════════
+#                      VALIDAÇÃO
+# ═══════════════════════════════════════════════════════════════
+validation:
+  name-regex: "^[a-zA-Z0-9_]{3,16}$"  # Regex para nomes de clã
+  tag-regex: "^[a-zA-Z0-9]{2,4}$"     # Regex para tags
+
+# ═══════════════════════════════════════════════════════════════
+#                      PERFORMANCE
+# ═══════════════════════════════════════════════════════════════
+performance:
+  async-save: true  # Salvar dados de forma assíncrona
+  cache-enabled: true  # Usar cache para clãs
+
+# ═══════════════════════════════════════════════════════════════
+#                      MUNDOS
+# ═══════════════════════════════════════════════════════════════
+worlds:
+  enabled: false  # Restringir clãs a mundos específicos
+  allowed-worlds:  # Lista de mundos permitidos (se enabled: true)
+    - world
+    - world_nether
+
+# ═══════════════════════════════════════════════════════════════
+#                      GUI
+# ═══════════════════════════════════════════════════════════════
+gui:
+  page-size: 28  # Itens por página em menus paginados
+# ═══════════════════════════════════════════════════════════════
+database:
+  # Usar banco de dados? Se false, usa YAML (arquivos)
+  enabled: false
+  
+  # Tipo: MYSQL ou SQLITE
+  type: MYSQL
+  
+  # Configurações MySQL
+  mysql:
+    host: localhost
+    port: 3306
+    database: vkclans
+    username: root
+    password: ''
+  
+  # Configurações SQLite (arquivo local)
+  sqlite:
+    file: clans.db
+
+

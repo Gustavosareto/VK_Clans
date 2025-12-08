@@ -1,0 +1,240 @@
+# ===================================================================
+#                    VKClans - MENSAGENS
+#           Plugin de Clans Avancado para Minecraft 1.8.8
+# ===================================================================
+# Placeholders disponiveis: {player}, {clan}, {tag}, {role}, etc.
+# Use & para cores: &a = verde, &c = vermelho, &e = amarelo, etc.
+# ===================================================================
+
+prefix: "&8[&6VKClans&8] "
+
+# ===================================================================
+#                      MENSAGENS GERAIS
+# ===================================================================
+no-permission: "&cVoce nao tem permissao para isso."
+player-only: "&cApenas jogadores podem usar este comando."
+no-clan: "&cVoce nao pertence a nenhum cla."
+already-in-clan: "&cVoce ja pertence a um cla."
+clan-not-found: "&cCla nao encontrado."
+player-not-found: "&cJogador nao encontrado."
+player-not-in-clan: "&cEste jogador nao esta no seu cla."
+player-offline: "&cEste jogador esta offline."
+invalid-args: "&cArgumentos invalidos. Use &e/clan ajuda"
+reloaded: "&aPlugin recarregado com sucesso!"
+
+# ===================================================================
+#                      CRIACAO DE CLA
+# ===================================================================
+clan-create-prompt-name: "&eDigite o nome do cla no chat (ou 'cancelar' para cancelar):"
+clan-create-prompt-tag: "&eDigite a tag do cla no chat (2-4 caracteres). Use &acodigos &epara cores!"
+clan-create-success: "&aCla &6{clan} &7[{tag}&7] &acriado com sucesso!"
+clan-create-cancelled: "&cCriacao de cla cancelada."
+clan-name-taken: "&cJa existe um cla com esse nome."
+clan-tag-taken: "&cJa existe um cla com essa tag."
+clan-name-invalid: "&cNome invalido. Use {min}-{max} caracteres."
+clan-tag-invalid: "&cTag invalida. Use {min}-{max} caracteres (sem contar codigos de cor)."
+clan-name-blacklisted: "&cEste nome de cla nao e permitido."
+clan-tag-blacklisted: "&cEsta tag de cla nao e permitida."
+clan-name-invalid-regex: "&cNome do clã contém caracteres inválidos. Use apenas letras, números e _."
+clan-tag-invalid-regex: "&cTag do clã contém caracteres inválidos. Use apenas letras e números."
+
+# ===================================================================
+#                      SISTEMA DE CONVITES
+# ===================================================================
+clan-invite-sent: "&aConvite enviado para &e{player}&a!"
+clan-invite-received: "&aVoce recebeu um convite para o cla &6{clan}&a! Use &e/clan aceitar {clan}"
+clan-invite-already-sent: "&cEste jogador ja tem um convite pendente."
+clan-invite-already-member: "&cEste jogador ja esta em um cla."
+clan-invite-accepted: "&aVoce entrou no cla &6{clan}&a!"
+clan-invite-declined: "&cVoce recusou o convite do cla &6{clan}&c."
+clan-invite-no-pending: "&cVoce nao tem convites pendentes deste cla."
+clan-invite-expired: "&cSeu convite para o cla &6{clan} &cexpirou."
+clan-new-member: "&e{player} &aentrou no cla!"
+clan-member-joined: "&e{player} &aentrou no servidor!"
+
+# ===================================================================
+#                      GERENCIAMENTO DE MEMBROS
+# ===================================================================
+clan-kick-success: "&aVoce expulsou &e{player} &ado cla."
+clan-kick-target: "&cVoce foi expulso do cla &6{clan}&c."
+clan-kick-broadcast: "&e{player} &cfoi expulso do cla por &e{kicker}&c."
+clan-kick-higher-role: "&cVoce nao pode expulsar alguem com cargo igual ou superior."
+clan-leave-success: "&aVoce saiu do cla."
+clan-leave-broadcast: "&e{player} &csaiu do cla."
+clan-leave-leader: "&cVoce nao pode sair do cla sendo lider. Transfira a lideranca primeiro."
+clan-full: "&cO cla atingiu o limite maximo de membros ({max})."
+
+# ===================================================================
+#                      SISTEMA DE CARGOS
+# ===================================================================
+clan-promote-success: "&aVoce promoveu &e{player} &apara &6{role}&a."
+clan-promote-target: "&aVoce foi promovido para &6{role}&a!"
+clan-promoted: "&aVoce foi promovido para &6{role}&a!"
+clan-promote-max: "&cEste jogador ja esta no cargo maximo permitido."
+clan-demote-success: "&aVoce rebaixou &e{player} &apara &6{role}&a."
+clan-demote-target: "&cVoce foi rebaixado para &6{role}&c."
+clan-demoted: "&cVoce foi rebaixado para &6{role}&c."
+clan-demote-min: "&cEste jogador ja esta no cargo minimo."
+clan-role-set: "&aVoce definiu &e{player} &acomo &6{role}&a."
+clan-role-invalid: "&cCargo invalido. Use: subdono, admin, membro"
+clan-transfer-success: "&aVoce transferiu a lideranca para &e{player}&a."
+clan-transfer-target: "&aVoce agora e o lider do cla!"
+clan-transfer-broadcast: "&e{player} &aagora e o novo lider do cla!"
+
+# ===================================================================
+#                      SISTEMA DE BASE
+# ===================================================================
+clan-base-set: "&aBase do cla definida na sua localizacao atual!"
+clan-base-teleport: "&aTeleportando para a base em &e{seconds} segundos&a..."
+clan-base-teleporting: "&eTeleportando em &6{time} &esegundos..."
+clan-base-teleported: "&aVoce foi teleportado para a base do cla!"
+clan-base-tp: "&aVoce foi teleportado para a base do cla!"
+clan-base-cancelled: "&cTeleporte cancelado! Voce se moveu."
+clan-base-no-base: "&cSeu cla nao possui uma base definida."
+clan-base-invalid: "&cA base do cla esta em um mundo invalido ou nao carregado."
+clan-base-cooldown: "&cAguarde &e{seconds} segundos &cpara teleportar novamente."
+clan-base-combat: "&cVoce nao pode teleportar enquanto em combate!"
+clan-base-world-blocked: "&cVoce nao pode definir a base neste mundo."
+
+# ===================================================================
+#                      SISTEMA DE PONTOS E KILLS
+# ===================================================================
+clan-kill: "&a+{points} pontos! &7Voce matou &e{victim}"
+clan-death: "&c-{points} pontos! &7Voce morreu."
+
+# ===================================================================
+#                      SISTEMA DE GUERRA
+# ===================================================================
+war-declared: "&c[GUERRA] &4{clan1} &cvs &4{clan2} &7({duration} minutos)"
+war-declared-against: "&c[GUERRA] &cO cla &e{clan1} &cdeclarou guerra contra voces!"
+war-already-active: "&cSeu cla ja esta em guerra."
+war-target-in-war: "&cO cla alvo ja esta em guerra."
+war-cooldown: "&cAguarde para declarar outra guerra."
+war-kill: "&e[Guerra] &6{killer_clan} &e({kills1}) vs ({kills2}) &6{victim_clan} &7- Restam: {remaining}"
+war-victory: "&a[VITORIA] &6Seu cla venceu a guerra! &7(+{points} pontos)"
+war-defeat: "&c[DERROTA] &4Seu cla perdeu a guerra."
+war-draw: "&e[EMPATE] &6A guerra terminou sem vencedor."
+war-not-at-war: "&cSeu cla nao esta em guerra."
+
+# ===================================================================
+#                      SISTEMA DE NIVEL
+# ===================================================================
+clan-level-up: "&a[LEVEL UP] &6Seu cla subiu para o nivel &e{level}&6!"
+clan-max-level: "&cSeu cla ja esta no nivel maximo."
+clan-upgrade-insufficient: "&cDinheiro insuficiente. Custo: &e{cost} &7(Banco: {balance})"
+clan-upgrade-success: "&aCla atualizado para nivel &e{level}&a! &7(Custo: {cost})"
+
+# ===================================================================
+#                      SISTEMA DE BANCO
+# ===================================================================
+bank-disabled: "&cO sistema de banco esta desabilitado."
+bank-deposit-success: "&aVoce depositou &e{amount} &ano banco do cla. &7(Saldo: {balance})"
+bank-withdraw-success: "&aVoce sacou &e{amount} &ado banco do cla. &7(Saldo: {balance})"
+bank-insufficient-funds: "&cVoce nao tem dinheiro suficiente."
+bank-insufficient-clan-funds: "&cO banco do cla nao tem saldo suficiente."
+bank-minimum-deposit: "&cValor minimo para deposito: &e{amount}"
+bank-minimum-withdraw: "&cValor minimo para saque: &e{amount}"
+
+# ===================================================================
+#                      SISTEMA DE MISSOES
+# ===================================================================
+mission-completed: "&a[Missao] &6Missao completada: &e{mission}! &7(+{points}p, +{money})"
+mission-progress: "&eMissao: &f{mission} &7[{current}/{target}]"
+
+# ===================================================================
+#                      SISTEMA DE CHAT
+# ===================================================================
+chat-enabled: "&aChat do cla &2ativado&a. Suas mensagens serao enviadas apenas para o cla."
+chat-disabled: "&cChat do cla &4desativado&c. Suas mensagens serao globais."
+chat-spy-enabled: "&aEspionagem de chat &2ativada&a."
+chat-spy-disabled: "&cEspionagem de chat &4desativada&c."
+
+# ===================================================================
+#                      SISTEMA DE BAU
+# ===================================================================
+chest-opened: "&aVoce abriu o bau do cla."
+
+# ===================================================================
+#                      DELETAR CLA
+# ===================================================================
+clan-delete-confirm: "&c&lATENCAO! &cIsso ira deletar permanentemente o cla. Digite novamente para confirmar."
+clan-delete-success: "&cCla &6{clan} &cdeletado permanentemente."
+clan-delete-cancelled: "&eDelecao cancelada."
+
+# ===================================================================
+#                      INFORMACOES DO CLA
+# ===================================================================
+clan-info-header: "&8&m------------------------------"
+clan-info-name: "&6Cla: &f{clan} &7[{tag}]"
+clan-info-level: "&6Nivel: &f{level} &7({exp}/{exp_needed})"
+clan-info-leader: "&6Lider: &f{leader}"
+clan-info-members: "&6Membros: &f{count}/{max}"
+clan-info-stats: "&6Stats: &a{kills} kills &7| &c{deaths} mortes &7| &e{kdr} KDR"
+clan-info-wars: "&6Guerras: &a{wins} vitorias &7| &c{losses} derrotas"
+clan-info-points: "&6Pontos: &e{points}"
+clan-info-bank: "&6Banco: &a{balance}"
+clan-info-created: "&6Criado em: &f{date}"
+clan-info-footer: "&8&m------------------------------"
+
+# ===================================================================
+#                      RANKING
+# ===================================================================
+ranking-header: "&8&m------------------------------"
+ranking-title: "&6Top Clas por {type}"
+ranking-footer: "&8&m------------------------------"
+
+# ===================================================================
+#                      LOGS
+# ===================================================================
+log-header: "&8&m------------------------------"
+log-title: "&6Historico do Cla"
+log-footer: "&8&m------------------------------"
+
+# ===================================================================
+#                      GUI / MENUS
+# ===================================================================
+gui-main-title: "&6&lMeu Cla &8- &e{clan}"
+gui-members-title: "&b&lMembros do Cla"
+gui-invite-title: "&a&lConvites Pendentes"
+gui-confirm-title: "&c&lConfirmar Acao"
+
+# Mensagens de interacao GUI
+clan-invite-in-gui: "&eDigite o nome do jogador que deseja convidar no chat:"
+clan-not-in-clan: "&cVoce nao esta em um cla! Use &e/clan criar <nome> <tag>&c."
+
+# ===================================================================
+#                      ALIANCAS
+# ===================================================================
+ally-request-sent: "&aConvite de alianca enviado para &f{clan}&a."
+ally-request-received: "&eO cla &f{clan} &equer se aliar ao seu cla!"
+ally-accepted: "&aAlianca formada com &f{clan}&a!"
+ally-denied: "&cConvite de alianca recusado."
+ally-removed: "&cAlianca com &f{clan} &cfoi desfeita."
+ally-already: "&cVoces ja sao aliados!"
+ally-limit: "&cVoce atingiu o limite de aliados!"
+ally-no-pending: "&cNao ha convite pendente deste cla!"
+
+# ===================================================================
+#                      FRIENDLY FIRE
+# ===================================================================
+friendly-fire-clan: "&cVoce nao pode atacar membros do seu cla!"
+friendly-fire-ally: "&cVoce nao pode atacar membros de clas aliados!"
+
+# ===================================================================
+#                      LIMITE DE IP
+# ===================================================================
+ip-limit-reached: "&cVoce atingiu o limite de clas por IP!"
+
+# ===================================================================
+#                      CONQUISTAS
+# ===================================================================
+achievement-unlocked: "&6&l[CONQUISTA] &f{achievement}"
+achievement-description: "&7{description}"
+achievement-reward: "&aRecompensa: &e{points} pontos &7| &a{money}"
+
+# ===================================================================
+#                      RANKING SEMANAL
+# ===================================================================
+weekly-reward: "&6&l[RANKING SEMANAL] &fSeu cla ficou em &e{position}o lugar!"
+weekly-reward-desc: "&a+{points} pontos &7| &a+{money} no banco"
+clan-invite-none: "&cVoce nao possui convites pendentes."
